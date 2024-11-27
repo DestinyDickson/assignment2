@@ -95,7 +95,7 @@ nav ul li ul{
 }
 
 nav ul li ul li a{ 
-    color: white;
+    color: black;
     padding: 5px;
     width: 100%;
     border: 1px solid black;
@@ -106,6 +106,10 @@ nav ul li ul li:hover a:hover{
     background-color: black;
     color: rgb(103, 205, 239);
     border-color: rgb(103, 205, 239);
+}
+
+nav ul li ul li{
+    width: 100%;
 }
 
 nav ul li:hover ul{
@@ -268,7 +272,7 @@ figcaption {
     }
     aside{
         float: right;
-        height: 265vh;
+        height: 210vh;
     }
     img{
         width : 90%;
