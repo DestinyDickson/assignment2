@@ -1,0 +1,281 @@
+html{
+    font-size: 20px;
+    font-family: serif;
+}
+
+body{
+    padding: 5px;
+    background-color: rgb(150, 208, 244);
+    border: 2px solid black;
+    margin: 1rem auto;
+    width: 95%;
+    box-sizing: border-box;
+}
+body>header{
+    grid-area: gridheader;
+}
+body>nav{
+    grid-area: gridnav;
+}
+body>main{
+    grid-area: gridmain;
+}
+body>aside{
+    grid-area: gridaside;
+}
+body>footer{
+    grid-area: gridfooter;
+}
+body{
+    display: grid;
+    grid-template-areas: 
+    "gridheader gridheader gridheader"
+    "gridnav gridnav gridnav"
+    "gridmain gridmain gridaside"
+    "gridfooter gridfooter gridfooter";
+    column-gap: 0.5rem;
+}
+
+header,
+footer{
+    background-image: linear-gradient(to right, red, white, blue);
+    padding: 5px;
+    text-align: center;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+nav{
+    background-color: blue;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-areas: "navlink navlink navlink";
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a{
+    padding: 5px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(103, 205, 239);
+    text-decoration: none;
+    color: black;
+    font: bold 1.0em arial;
+}
+
+nav ul li a:hover{
+    background-color: black;
+    color: rgb(103, 205, 239);
+    border-color: rgb(103, 205, 239);
+}
+
+nav ul li ul{ 
+    display: none;
+	width: 100px;
+	position: absolute; 
+	z-index: 999; 
+	text-align: left;
+	background-color: lightblue;
+    box-shadow: 0 0 5px blue;
+}
+
+nav ul li ul li a{ 
+    color: black;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid black;
+    display: block; 
+}
+
+nav ul li ul li:hover a:hover{ 
+    background-color: black;
+    color: rgb(103, 205, 239);
+    border-color: rgb(103, 205, 239);
+}
+
+nav ul li ul li{
+    width: 100%;
+}
+
+nav ul li:hover ul{
+    display: block; 
+}
+
+aside{
+    background-image: url(../images/images.png);
+    background-size: cover;
+}
+
+aside li{
+    list-style-type: none;
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+}
+
+aside h2{
+    text-align: center;
+}
+
+.bio img{
+    float: left;
+    margin-right: 20px;
+    width: 40%;
+    clip-path: polygon(47.5% 8px, 85.32% 3.02%, 94.97% 51.93%, 86.76% 99.14%, 50% 100%, 0.62% 100.53%, 0px 50%, 0.01% 4.1%);
+    shape-outside: polygon(50% 0px, 86.31% 7.61%, 88.95% 12.91%, 91.6% 27.26%, 93.56% 37.99%, 96.79% 52.74%, 97.77% 57.56%, 93.46% 73.31%, 88.7% 99.42%, 56.65% 99.56%, 0px 50%);
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 5px solid blue;
+    margin: 20px 0;
+    padding: 10px 20px;
+    width: 75%;
+    background-color: #fafafa;
+    position: relative;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 3em;
+    color: blue;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    line-height: 1;
+}
+
+blockquote::after {
+    content: "”";
+    font-size: 3em;
+    color: blue;
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+    line-height: 1;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #888;
+    margin: 10px;
+}
+
+cite::before {
+    content: "— ";
+}
+
+table{ 
+    margin: 2px;
+    width: 50%;
+    height: 45%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: skyblue;
+}
+
+table thead{
+    background-color: rgb(235, 121, 121);
+}
+
+table td, table th{
+    padding: 5px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+tbody tr:hover{
+    background-color: antiquewhite;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  
+    gap: 5px;
+    padding: 20px;
+}
+
+figure {
+    position: relative;
+    margin: 0;
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 98.40% 0.24%, 100% 75%, 50% 100%, 0% 75%, 1.38% -0.35%);
+    shape-margin: 1rem;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 7px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+@media (max-width : 800px){
+    html{
+        font-size : 14px;
+    }
+
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    html{
+        font-size : 12px;
+    }
+    body{
+        display:block;
+    }
+    .gallery{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    aside{
+        float: right;
+        height: 210vh;
+    }
+    img{
+        width : 90%;
+        height : 90%;
+    }
+}
